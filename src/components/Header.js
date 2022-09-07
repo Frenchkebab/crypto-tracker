@@ -28,6 +28,7 @@ const Header = () => {
   const navigate = useNavigate();
 
   const { currency, setCurrency } = CryptoState();
+  console.log(currency);
 
   const darkTheme = createTheme({
     palette: {
@@ -51,7 +52,8 @@ const Header = () => {
             </Typography>
             <Select
               variant='outlined'
-              value={'USD'}
+              value={currency}
+              onChange={(e) => setCurrency(e.target.value)}
               style={{ width: 100, height: 40 }}>
               <MenuItem value={'USD'}>USD</MenuItem>
               <MenuItem value={'KRW'}>KRW</MenuItem>

@@ -24,6 +24,4 @@ const CryptoContext = ({ children }) => {
 
 export default CryptoContext;
 
-export const CryptoState = () => {
-  useContext(Crypto);
-};
+export const CryptoState = () => useContext(Crypto);
