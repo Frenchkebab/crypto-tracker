@@ -1,7 +1,13 @@
+import { Container, makeStyles } from '@material-ui/core';
 import React from 'react';
+import Banner from '../components/Banner/Banner';
 
 const HomePage = () => {
-  return <div>HomePage</div>;
+  return (
+    <>
+      <Banner />
+    </>
+  );
 };
 
 export default HomePage;
