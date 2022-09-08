@@ -102,7 +102,7 @@ const CoinsTable = () => {
             <Table>
               <TableHead style={{ backgroundColor: '#EEBC1D' }}>
                 <TableRow>
-                  {['Coin', 'Price', '24h chagne', 'Market Cap'].map((head) => (
+                  {['Coin', 'Price', '24h change', 'Market Cap'].map((head) => (
                     <TableCell
                       style={{
                         color: 'black',
@@ -110,7 +110,7 @@ const CoinsTable = () => {
                         fontFamily: 'Montserrat',
                       }}
                       key={head}
-                      align={head === 'Coin' ? 'left' : 'right'}>
+                      align={head === 'Coin' ? 'center' : 'right'}>
                       {head}
                     </TableCell>
                   ))}
@@ -132,19 +132,22 @@ const CoinsTable = () => {
                           scope='row'
                           styles={{
                             display: 'flex',
+                            flexDirection: 'column',
+                            alignItems: 'center',
                             gap: 15,
                           }}>
-                          <img
-                            src={row?.image}
-                            alt={row.name}
-                            height='50'
-                            style={{ marginBottom: 10 }}
-                          />
                           <div
                             style={{
                               display: 'flex',
                               flexDirection: 'column',
+                              alignItems: 'center',
                             }}>
+                            <img
+                              src={row?.image}
+                              alt={row.name}
+                              height='50'
+                              style={{ marginBottom: 10 }}
+                            />
                             <span
                               style={{
                                 textTransform: 'uppercase',
