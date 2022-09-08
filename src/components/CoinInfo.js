@@ -8,7 +8,7 @@ import {
   makeStyles,
   ThemeProvider,
 } from '@material-ui/core';
-import { Line, Chart } from 'react-chartjs-2';
+import { Line } from 'react-chartjs-2';
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -46,6 +46,7 @@ const CoinInfo = ({ coin }) => {
 
   useEffect(() => {
     fetchHistoricData();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [currency, days]);
 
   const darkTheme = createTheme({
@@ -107,6 +108,7 @@ const CoinInfo = ({ coin }) => {
               }}
               options={{
                 elements: {
+                  borderJoinStyle: 'round',
                   point: {
                     radius: 2,
                   },

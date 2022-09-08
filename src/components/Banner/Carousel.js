@@ -1,5 +1,4 @@
 import { makeStyles } from '@material-ui/core';
-import { findByLabelText } from '@testing-library/react';
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import AliceCarousel from 'react-alice-carousel';
@@ -43,6 +42,7 @@ const Carousel = () => {
 
   useEffect(() => {
     fetchTrendingCoins();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [currency]);
 
   const items = trending.map((coin) => {

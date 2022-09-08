@@ -16,8 +16,7 @@ import {
 import { Pagination } from '@material-ui/lab';
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
-import { Classnames } from 'react-alice-carousel';
-import { Navigate, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { CoinList } from '../config/api';
 import { CryptoState } from '../CryptoContext';
 import { numberWithCommas } from './Banner/Carousel';
@@ -44,6 +43,7 @@ const CoinsTable = () => {
 
   useEffect(() => {
     fetchCoins();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [currency]);
 
   const darkTheme = createTheme({
