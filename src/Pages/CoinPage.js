@@ -2,6 +2,8 @@ import { makeStyles, Typography } from '@material-ui/core';
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import parse from 'html-react-parser';
+
 import CoinInfo from '../components/CoinInfo';
 import { SingleCoin } from '../config/api';
 import { CryptoState } from '../CryptoContext';
@@ -49,6 +51,14 @@ const CoinPage = () => {
       marginBottom: 20,
       fontFamily: 'Montserrat',
     },
+    description: {
+      width: '100%',
+      fontFamily: 'Montserrat',
+      padding: 25,
+      paddingBottom: 15,
+      paddingTop: 0,
+      textAlign: 'justify',
+    },
   }));
 
   const classes = useStyles();
@@ -64,6 +74,9 @@ const CoinPage = () => {
         />
         <Typography variant='h3' className={classes.heading}>
           {coin?.name}
+        </Typography>
+        <Typography variant='subtitle1' className={classes.description}>
+          {parse(`${coin?.description.en.split('. ')[0]}`)}.
         </Typography>
       </div>
 
