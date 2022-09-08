@@ -27,6 +27,8 @@ export function numberWithCommas(x) {
   return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
 }
 
+const handleDragStart = (e) => e.preventDefault();
+
 const Carousel = () => {
   const [trending, setTrending] = useState([]);
   const classes = useStyles();
@@ -47,7 +49,11 @@ const Carousel = () => {
     let profit = coin.price_change_percentage_24h >= 0;
 
     return (
-      <Link className={classes.carouselItem} to={`/coins/${coin.id}`}>
+      <Link
+        className={classes.carouselItem}
+        to={`/coins/${coin.id}`}
+        onDragStart={handleDragStart}
+        role='presentation'>
         <img
           src={coin?.image}
           alt={coin.name}
@@ -86,14 +92,15 @@ const Carousel = () => {
     <div className={classes.carousel}>
       <AliceCarousel
         mouseTracking
+        touchTracking
         infinite
         autoPlayInterval={1000}
         animationDuration={1500}
         disableDotsControls
         disableButtonsControls
         responsive={responsive}
-        autoPlay
         items={items}
+        autoPlay
       />
     </div>
   );
