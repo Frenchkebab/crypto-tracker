@@ -108,9 +108,12 @@ const CoinInfo = ({ coin }) => {
               }}
               options={{
                 elements: {
-                  borderJoinStyle: 'round',
+                  line: {
+                    borderJoinStyle: 'round',
+                    borderWidth: 2,
+                  },
                   point: {
-                    radius: 2,
+                    radius: 1,
                   },
                 },
               }}
